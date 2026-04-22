@@ -33,7 +33,8 @@ def clean_airbnb_kaggle(df):
     if NUMBER_OF_REVIEWS_COL in df.columns:
         df = clean_numeric_column(df, NUMBER_OF_REVIEWS_COL)
 
-    df = df.dropna(subset=[MINIMUM_NIGHTS_COL])
+    if MINIMUM_NIGHTS_COL in df.columns:
+        df = df.dropna(subset=[MINIMUM_NIGHTS_COL])
     return df
 
 def clean_insideairbnb(df):
