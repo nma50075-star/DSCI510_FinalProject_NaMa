@@ -7,18 +7,18 @@
 
 This project explores factors that influence Airbnb pricing and connects short-term rental patterns with broader tourism trends. By combining multiple datasets, the analysis provides insights into pricing behavior, user engagement, and demand dynamics in the short-term rental market.
 
-The project follows a structured data pipeline, including data collection, cleaning, analysis, and visualization.
+The project follows a structured data pipeline, including data loading, cleaning, analysis, and visualization.
 
 ---
 
 ## Objectives
 
-- Analyze the distribution of Airbnb prices
-- Understand how room type affects pricing
-- Explore the relationship between price and user engagement (reviews)
-- Examine the impact of minimum stay requirements on pricing
-- Identify tourism trends over time
-- Compare visitor trends across different regions
+- Analyze the distribution of Airbnb prices  
+- Understand how room type affects pricing  
+- Explore the relationship between price and user engagement (reviews)  
+- Examine the impact of minimum stay requirements on pricing  
+- Identify tourism trends over time  
+- Compare visitor trends across different regions  
 
 ---
 
@@ -58,25 +58,25 @@ This project integrates three datasets:
 ---
 
 ## Project Structure
-
-```text
 DSCI510_FinalProject_NaMa-main/
 ├── doc/
-│   └── Na_Ma_progress_report.pdf
+│ └── Na_Ma_progress_report.pdf
 ├── src/
-│   ├── __init__.py
-│   ├── analyze.py
-│   ├── config.py
-│   ├── data_collection.py
-│   ├── load.py
-│   ├── main.py
-│   ├── process.py
-│   └── tests.py
+│ ├── init.py
+│ ├── analyze.py
+│ ├── config.py
+│ ├── data_collection.py
+│ ├── load.py
+│ ├── main.py
+│ ├── process.py
+│ └── tests.py
 ├── .env.example
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
 └── results.ipynb
+
+---
 
 ## Data Processing Pipeline
 
@@ -100,7 +100,7 @@ pip install -r requirements.txt
 
 Create a `data/` folder and place the datasets inside:
 
-data/
+data/  
 ├── airbnb_kaggle.csv  
 ├── insideairbnb_la.csv  
 └── tourism.csv  
@@ -150,4 +150,4 @@ The project generates multiple visualizations to support analysis:
 ## Author
 
 Na Ma  
-Communication Data Science, USC
+Communication Data Science, USC  
