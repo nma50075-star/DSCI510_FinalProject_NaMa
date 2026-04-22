@@ -1,7 +1,8 @@
 import pandas as pd
 from src.config import PRICE_COL
-from src.config import NUMBER_OF_REVIEWS_COL
+from src.config import ROOM_TYPE_COL
 from src.config import MINIMUM_NIGHTS_COL
+from src.config import NUMBER_OF_REVIEWS_COL
 from src.config import TOURISM_TIME_COL
 from src.config import TOURISM_TOTAL_COL
 from src.config import TOURISM_ASIA_COL
@@ -27,43 +28,41 @@ def clean_airbnb_kaggle(df):
     df = df.copy()
     df = clean_price(df)
     possible_names = ["minimum_nights", "minimum nights", "Minimum Nights"]
-
     min_col = None
+
     for name in possible_names:
         if name in df.columns:
             min_col = name
             break
-
     if min_col is not None:
         df[min_col] = df[min_col].astype(str)
         df[min_col] = df[min_col].str.replace(",", "", regex=False)
         df[min_col] = pd.to_numeric(df[min_col], errors="coerce")
         df = df.dropna(subset=[min_col])
-        df.rename(columns={min_col: "minimum_nights"}, inplace=True)
-
-    if "number_of_reviews" in df.columns:
-        df["number_of_reviews"] = df["number_of_reviews"].astype(str)
-        df["number_of_reviews"] = df["number_of_reviews"].str.replace(",", "", regex=False)
-        df["number_of_reviews"] = pd.to_numeric(df["number_of_reviews"], errors="coerce")
-
+        df.rename(columns={min_col: MINIMUM_NIGHTS_COL}, inplace=True)
+    if NUMBER_OF_REVIEWS_COL in df.columns:
+        df = clean_numeric_column(df, NUMBER_OF_REVIEWS_COL)
     return df
 
 def clean_insideairbnb(df):
     df = df.copy()
-
     if NUMBER_OF_REVIEWS_COL in df.columns:
         df = clean_numeric_column(df, NUMBER_OF_REVIEWS_COL)
-
     df = df.dropna(subset=[ROOM_TYPE_COL, NUMBER_OF_REVIEWS_COL])
     return df
 
 def clean_tourism(df):
     df = df.copy()
     df[TOURISM_TIME_COL] = pd.to_datetime(df[TOURISM_TIME_COL], errors="coerce")
-
     df = clean_numeric_column(df, TOURISM_TOTAL_COL)
     df = clean_numeric_column(df, TOURISM_ASIA_COL)
     df = clean_numeric_column(df, TOURISM_CENTRAL_AMERICA_COL)
-
-    df = df.dropna(subset=[TOURISM_TIME_COL, TOURISM_TOTAL_COL, TOURISM_ASIA_COL, TOURISM_CENTRAL_AMERICA_COL])
+    df = df.dropna(
+        subset=[
+            TOURISM_TIME_COL,
+            TOURISM_TOTAL_COL,
+            TOURISM_ASIA_COL,
+            TOURISM_CENTRAL_AMERICA_COL
+        ]
+    )
     return df
