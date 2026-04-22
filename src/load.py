@@ -8,7 +8,7 @@ def load_airbnb_kaggle():
     return df
 
 def load_insideairbnb_la():
-    df = pd.read_csv(INSIDEAIRBNB_LA_FILE, low_memory=False)
+    df = pd.read_csv(INSIDEAIRBNB_LA_FILE, encoding="latin1", low_memory=False)
     return df
 
 def load_tourism():
