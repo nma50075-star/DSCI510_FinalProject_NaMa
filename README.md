@@ -124,15 +124,57 @@ python -m src.tests
 
 ## Results
 
-The project generates multiple visualizations to support analysis:
+### 1. Price Distribution
 
-- Distribution of Airbnb prices  
-- Average price by room type  
-- Price vs minimum nights  
-- Price vs number of reviews  
-- Average reviews by room type  
-- Tourism trends over time  
-- Comparison of visitors from Asia vs Central America  
+![Price Histogram](results/price_histogram.png)
+
+The distribution of Airbnb listing prices is right-skewed, with most listings concentrated at lower price ranges. A small number of listings have significantly higher prices.
+
+---
+
+### 2. Price by Room Type
+
+![Room Type Price](results/room_type_price.png)
+
+Entire homes/apartments have the highest average prices, while shared rooms are the most affordable. This shows clear market segmentation.
+
+---
+
+### 3. Price vs Reviews
+
+![Price vs Reviews](results/price_vs_reviews.png)
+
+There is no strong linear relationship between price and number of reviews. Lower-priced listings tend to receive more reviews.
+
+---
+
+### 4. Reviews by Room Type
+
+![Reviews by Room Type](results/reviews_by_room_type.png)
+
+Entire homes receive the highest number of reviews overall, indicating strong demand.
+
+---
+
+### 5. Tourism Trend Over Time
+
+![Tourism Trend](results/tourism_total_trend.png)
+
+Tourism arrivals show an overall increasing trend over time with fluctuations.
+
+---
+
+### 6. Asia vs Central America Tourism
+
+![Tourism Comparison](results/tourism_asia_vs_central_america.png)
+
+Asia consistently contributes more visitors than Central America.
+
+---
+
+### Overall Insight
+
+Airbnb pricing is strongly influenced by room type rather than popularity. Tourism trends show steady growth with regional differences, which may impact Airbnb demand.
 
 ---
 
