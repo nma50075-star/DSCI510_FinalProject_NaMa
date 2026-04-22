@@ -26,15 +26,26 @@ def clean_numeric_column(df, column_name):
 def clean_airbnb_kaggle(df):
     df = df.copy()
     df = clean_price(df)
+    possible_names = ["minimum_nights", "minimum nights", "Minimum Nights"]
 
-    if MINIMUM_NIGHTS_COL in df.columns:
-        df = clean_numeric_column(df, MINIMUM_NIGHTS_COL)
+    min_col = None
+    for name in possible_names:
+        if name in df.columns:
+            min_col = name
+            break
 
-    if NUMBER_OF_REVIEWS_COL in df.columns:
-        df = clean_numeric_column(df, NUMBER_OF_REVIEWS_COL)
+    if min_col is not None:
+        df[min_col] = df[min_col].astype(str)
+        df[min_col] = df[min_col].str.replace(",", "", regex=False)
+        df[min_col] = pd.to_numeric(df[min_col], errors="coerce")
+        df = df.dropna(subset=[min_col])
+        df.rename(columns={min_col: "minimum_nights"}, inplace=True)
 
-    if MINIMUM_NIGHTS_COL in df.columns:
-        df = df.dropna(subset=[MINIMUM_NIGHTS_COL])
+    if "number_of_reviews" in df.columns:
+        df["number_of_reviews"] = df["number_of_reviews"].astype(str)
+        df["number_of_reviews"] = df["number_of_reviews"].str.replace(",", "", regex=False)
+        df["number_of_reviews"] = pd.to_numeric(df["number_of_reviews"], errors="coerce")
+
     return df
 
 def clean_insideairbnb(df):
