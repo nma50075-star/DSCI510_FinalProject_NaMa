@@ -59,7 +59,7 @@ This project integrates three datasets:
 
 ## Project Structure
 
-```text
+```bash text
 DSCI510_FinalProject_NaMa-main/
 ├── doc/
 │   └── Na_Ma_progress_report.pdf
@@ -103,7 +103,7 @@ pip install -r requirements.txt
 
 Create a `data/` folder and place the datasets inside:
 
-```
+```bash
 data/  
 ├── airbnb_kaggle.csv  
 ├── insideairbnb_la.csv  
