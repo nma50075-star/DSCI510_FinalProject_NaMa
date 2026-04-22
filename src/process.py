@@ -32,7 +32,6 @@ def clean_numeric_column(df, column_name):
 def clean_airbnb_kaggle(df):
     df = df.copy()
     df = standardize_columns(df)
-
     df = clean_price(df)
 
     if MINIMUM_NIGHTS_COL in df.columns:
@@ -58,11 +57,9 @@ def clean_tourism(df):
     df = df.copy()
     df = standardize_columns(df)
     df[TOURISM_TIME_COL] = pd.to_datetime(df[TOURISM_TIME_COL], errors="coerce")
-
     df = clean_numeric_column(df, TOURISM_TOTAL_COL)
     df = clean_numeric_column(df, TOURISM_ASIA_COL)
     df = clean_numeric_column(df, TOURISM_CENTRAL_AMERICA_COL)
-
     df = df.dropna(
         subset=[
             TOURISM_TIME_COL,
