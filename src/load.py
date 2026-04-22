@@ -1,8 +1,16 @@
 import pandas as pd
-from src.config import DATA_FILE_1
+from src.config import AIRBNB_KAGGLE_FILE
+from src.config import INSIDEAIRBNB_LA_FILE
+from src.config import TOURISM_FILE
 
-def load_insideairbnb():
-    df = pd.read_csv(DATA_FILE_1, low_memory=False)
-    df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
-    print(df.columns)
+def load_airbnb_kaggle():
+    df = pd.read_csv(AIRBNB_KAGGLE_FILE, low_memory=False)
+    return df
+
+def load_insideairbnb_la():
+    df = pd.read_csv(INSIDEAIRBNB_LA_FILE, low_memory=False)
+    return df
+
+def load_tourism():
+    df = pd.read_csv(TOURISM_FILE, low_memory=False)
     return df
