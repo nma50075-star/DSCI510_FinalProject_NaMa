@@ -14,9 +14,6 @@ def average_price_by_room_type(df):
     result = df.groupby("room_type")["price"].mean()
     return result
 
-def price_vs_accommodates(df):
-    return df[["accommodates", "price"]]
-
 def plot_room_type_price(df):
     avg_price = df.groupby("room_type")["price"].mean()
 
@@ -30,14 +27,14 @@ def plot_room_type_price(df):
     plt.savefig(RESULTS_FOLDER + "room_type_price.png")
     plt.close()
 
-def plot_accommodates_price(df):
+def plot_minimum_nights_price(df):
     plt.figure()
 
-    plt.scatter(df["accommodates"], df["price"])
+    plt.scatter(df["minimum_nights"], df["price"])
 
-    plt.title("Price vs Accommodates")
-    plt.xlabel("Accommodates")
+    plt.title("Price vs Minimum Nights")
+    plt.xlabel("Minimum Nights")
     plt.ylabel("Price")
 
-    plt.savefig(RESULTS_FOLDER + "accommodates_price.png")
+    plt.savefig(RESULTS_FOLDER + "minimum_nights_price.png")
     plt.close()
