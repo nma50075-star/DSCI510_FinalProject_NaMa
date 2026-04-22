@@ -8,6 +8,11 @@ from src.config import TOURISM_TOTAL_COL
 from src.config import TOURISM_ASIA_COL
 from src.config import TOURISM_CENTRAL_AMERICA_COL
 
+def standardize_columns(df):
+    df = df.copy()
+    df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
+    return df
+
 def clean_price(df):
     df = df.copy()
     df[PRICE_COL] = df[PRICE_COL].astype(str)
@@ -26,37 +31,38 @@ def clean_numeric_column(df, column_name):
 
 def clean_airbnb_kaggle(df):
     df = df.copy()
-    df = clean_price(df)
-    possible_names = ["minimum_nights", "minimum nights", "Minimum Nights"]
-    min_col = None
+    df = standardize_columns(df)
 
-    for name in possible_names:
-        if name in df.columns:
-            min_col = name
-            break
-    if min_col is not None:
-        df[min_col] = df[min_col].astype(str)
-        df[min_col] = df[min_col].str.replace(",", "", regex=False)
-        df[min_col] = pd.to_numeric(df[min_col], errors="coerce")
-        df = df.dropna(subset=[min_col])
-        df.rename(columns={min_col: MINIMUM_NIGHTS_COL}, inplace=True)
+    df = clean_price(df)
+
+    if MINIMUM_NIGHTS_COL in df.columns:
+        df = clean_numeric_column(df, MINIMUM_NIGHTS_COL)
+        df = df.dropna(subset=[MINIMUM_NIGHTS_COL])
+
     if NUMBER_OF_REVIEWS_COL in df.columns:
         df = clean_numeric_column(df, NUMBER_OF_REVIEWS_COL)
+
     return df
 
 def clean_insideairbnb(df):
     df = df.copy()
+    df = standardize_columns(df)
+
     if NUMBER_OF_REVIEWS_COL in df.columns:
         df = clean_numeric_column(df, NUMBER_OF_REVIEWS_COL)
+
     df = df.dropna(subset=[ROOM_TYPE_COL, NUMBER_OF_REVIEWS_COL])
     return df
 
 def clean_tourism(df):
     df = df.copy()
+    df = standardize_columns(df)
     df[TOURISM_TIME_COL] = pd.to_datetime(df[TOURISM_TIME_COL], errors="coerce")
+
     df = clean_numeric_column(df, TOURISM_TOTAL_COL)
     df = clean_numeric_column(df, TOURISM_ASIA_COL)
     df = clean_numeric_column(df, TOURISM_CENTRAL_AMERICA_COL)
+
     df = df.dropna(
         subset=[
             TOURISM_TIME_COL,
