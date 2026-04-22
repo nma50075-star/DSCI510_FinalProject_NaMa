@@ -77,7 +77,7 @@ DSCI510_FinalProject_NaMa-main/
 ├── README.md
 ├── requirements.txt
 └── results.ipynb
-
+```
 
 ---
 
@@ -103,10 +103,12 @@ pip install -r requirements.txt
 
 Create a `data/` folder and place the datasets inside:
 
+```
 data/  
 ├── airbnb_kaggle.csv  
 ├── insideairbnb_la.csv  
 └── tourism.csv  
+```
 
 ---
 
