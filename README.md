@@ -1,39 +1,73 @@
-# DSCI510_FinalProject_NaMa
-DSCI510 Final Project - Airbnb price analysis
+# Airbnb Price Analysis in Los Angeles
 
-# Project Title
-Airbnb Price Analysis in Los Angeles
+## Introduction
+This project analyzes Airbnb listing prices in Los Angeles. 
+The goal is to understand the distribution of listing prices and identify general pricing patterns.
 
-# Introduction
-This project analyzes Airbnb listing prices in Los Angeles.
-The goal is to understand price distribution and explore patterns in listing costs.
+The project demonstrates a complete data pipeline:
+- retrieving data from an API
+- loading and cleaning dataset
+- performing analysis
+- generating visualizations
 
-# Data Sources
+This project follows modular programming practices by organizing code into separate scripts in the src folder.
 
-| Source | Description |
-|-------|------------|
-| InsideAirbnb dataset | listing price data |
-| OpenStreetMap API | location information |
+## Data Sources
 
-# Analysis
-We analyze price distribution of Airbnb listings.
-We clean price column, convert to numeric format, and visualize distribution using histogram.
+| Source | Description | Type |
+|-------|------------|------|
+| InsideAirbnb dataset | Airbnb listing price data for Los Angeles | CSV dataset |
+| OpenStreetMap API | Provides geographic location information | API |
 
-# Summary of Results
-The price distribution shows most listings are concentrated in mid price range.
+## Analysis
+The analysis focuses on price distribution of Airbnb listings.
 
-# How to run
+Steps:
+1. Load dataset using pandas
+2. Clean the price column by removing symbols such as "$" and ","
+3. Convert price values to numeric format
+4. Plot histogram to visualize distribution of prices
 
-Step 1 install packages:
+The histogram helps identify the range of most common listing prices.
+
+## Summary of Results
+The price distribution visualization shows that most Airbnb listings fall within a mid-range price category, with fewer listings at extremely high prices.
+
+The distribution is slightly right-skewed, meaning there are some listings with much higher prices compared to the majority.
+
+## How to run
+
+Step 1 install dependencies:
+
 pip install -r requirements.txt
 
 Step 2 run test:
-python tests.py
 
-Step 3 run project:
+python src/tests.py
+
+Step 3 run pipeline:
+
 python src/main.py
 
-# AI generated code
-Some code sections were generated with ChatGPT.
-All such sections are labeled with:
-# AI generated
+The program will:
+- load dataset
+- clean price column
+- generate histogram plot
+
+## Project structure
+
+src/
+    data_collection.py
+    load.py
+    process.py
+    analyze.py
+    main.py
+    config.py
+    tests.py
+
+docs/
+    Na_Ma_progress_report.pdf
+    Na_Ma_presentation.pdf
+
+requirements.txt
+README.md
