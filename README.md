@@ -1,73 +1,153 @@
-# Airbnb Price Analysis in Los Angeles
+# DSCI510 Final Project  
+## Airbnb Pricing and Tourism Trend Analysis
 
-## Introduction
-This project analyzes Airbnb listing prices in Los Angeles. 
-The goal is to understand the distribution of listing prices and identify general pricing patterns.
+---
 
-The project demonstrates a complete data pipeline:
-- retrieving data from an API
-- loading and cleaning dataset
-- performing analysis
-- generating visualizations
+## Project Overview
 
-This project follows modular programming practices by organizing code into separate scripts in the src folder.
+This project explores factors that influence Airbnb pricing and connects short-term rental patterns with broader tourism trends. By combining multiple datasets, the analysis provides insights into pricing behavior, user engagement, and demand dynamics in the short-term rental market.
 
-## Data Sources
+The project follows a structured data pipeline, including data collection, cleaning, analysis, and visualization.
 
-| Source | Description | Type |
-|-------|------------|------|
-| InsideAirbnb dataset | Airbnb listing price data for Los Angeles | CSV dataset |
-| OpenStreetMap API | Provides geographic location information | API |
+---
 
-## Analysis
-The analysis focuses on price distribution of Airbnb listings.
+## Objectives
 
-Steps:
-1. Load dataset using pandas
-2. Clean the price column by removing symbols such as "$" and ","
-3. Convert price values to numeric format
-4. Plot histogram to visualize distribution of prices
+- Analyze the distribution of Airbnb prices
+- Understand how room type affects pricing
+- Explore the relationship between price and user engagement (reviews)
+- Examine the impact of minimum stay requirements on pricing
+- Identify tourism trends over time
+- Compare visitor trends across different regions
 
-The histogram helps identify the range of most common listing prices.
+---
 
-## Summary of Results
-The price distribution visualization shows that most Airbnb listings fall within a mid-range price category, with fewer listings at extremely high prices.
+## Datasets
 
-The distribution is slightly right-skewed, meaning there are some listings with much higher prices compared to the majority.
+This project integrates three datasets:
 
-## How to run
+### 1. Kaggle Airbnb Open Data
+- Source: Kaggle  
+- Purpose: Main dataset for pricing analysis  
+- Key variables:
+  - `price`
+  - `minimum_nights`
+  - `number_of_reviews`
+  - `room_type`
 
-Step 1 install dependencies:
+---
 
+### 2. InsideAirbnb Los Angeles Listings Data
+- Source: InsideAirbnb  
+- Purpose: Supplementary dataset for room type and review analysis  
+- Key variables:
+  - `room_type`
+  - `number_of_reviews`
+
+---
+
+### 3. Tourism Dataset (International Visitors)
+- Source: Public tourism statistics dataset  
+- Purpose: Analyze long-term tourism trends  
+- Key variables:
+  - `time`
+  - `total`
+  - `asia`
+  - `central_america`
+
+---
+
+## Project Structure
+
+```text
+DSCI510_FinalProject_NaMa-main/
+├── doc/
+│   └── Na_Ma_progress_report.pdf
+├── src/
+│   ├── __init__.py
+│   ├── analyze.py
+│   ├── config.py
+│   ├── data_collection.py
+│   ├── load.py
+│   ├── main.py
+│   ├── process.py
+│   └── tests.py
+├── .env.example
+├── .gitignore
+├── README.md
+├── requirements.txt
+└── results.ipynb
+
+## Data Processing Pipeline
+
+The project is organized into modular components:
+
+- load.py → Load datasets from local files  
+- process.py → Clean and standardize data  
+- analyze.py → Generate visualizations  
+- main.py → Execute the full pipeline  
+
+---
+
+## How to Run
+
+### 1. Install dependencies
 pip install -r requirements.txt
 
-Step 2 run test:
+---
 
-python src/tests.py
+### 2. Prepare datasets
 
-Step 3 run pipeline:
+Create a `data/` folder and place the datasets inside:
 
-python src/main.py
+data/
+├── airbnb_kaggle.csv  
+├── insideairbnb_la.csv  
+└── tourism.csv  
 
-The program will:
-- load dataset
-- clean price column
-- generate histogram plot
+---
 
-## Project structure
+### 3. Run the pipeline
+python -m src.main
 
-src/
-    data_collection.py
-    load.py
-    process.py
-    analyze.py
-    main.py
-    config.py
-    tests.py
+---
 
-docs/
-    Na_Ma_progress_report.pdf
-    Na_Ma_presentation.pdf
+### 4. Run tests (if required)
+python -m src.tests
 
-requirements.txt
-README.md
+---
+
+## Results
+
+The project generates multiple visualizations to support analysis:
+
+- Distribution of Airbnb prices  
+- Average price by room type  
+- Price vs minimum nights  
+- Price vs number of reviews  
+- Average reviews by room type  
+- Tourism trends over time  
+- Comparison of visitors from Asia vs Central America  
+
+---
+
+## Key Insights
+
+- Airbnb pricing varies significantly across listings, with room type acting as an important positioning factor.  
+- Listings with higher review counts do not always have higher prices, suggesting that popularity and pricing are not perfectly aligned.  
+- Tourism data shows a long-term increase in international visitors, especially from Asia, indicating growing demand that may influence short-term rental markets.  
+
+---
+
+## Notes
+
+- The `data/` and `results/` folders are excluded from the repository as required.  
+- `.env.example` is provided as a template for environment variables. Real keys should not be uploaded.  
+- This project focuses on data analysis and visualization using Python.  
+
+---
+
+## Author
+
+Na Ma  
+Communication Data Science, USC
