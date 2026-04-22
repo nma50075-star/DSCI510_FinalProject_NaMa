@@ -26,6 +26,7 @@ def plot_price_histogram(df):
 
 def plot_room_type_price(df):
     make_results_folder()
+    print(df.columns)
     avg_price = df.groupby(ROOM_TYPE_COL)[PRICE_COL].mean()
 
     plt.figure()
@@ -59,7 +60,6 @@ def plot_price_vs_reviews(df):
 def plot_reviews_by_room_type(df):
     make_results_folder()
     avg_reviews = df.groupby(ROOM_TYPE_COL)[NUMBER_OF_REVIEWS_COL].mean()
-
     plt.figure()
     avg_reviews.plot(kind="bar")
     plt.title("Average Reviews by Room Type")
