@@ -182,6 +182,14 @@ Airbnb pricing is primarily influenced by room type rather than popularity. Mean
 
 ---
 
+## AI Usage
+
+- Some portions of this project were developed with the assistance of ChatGPT, particularly for data cleaning and initial data visualization functions.
+- All AI-generated code sections have been clearly labeled with `# AI generated:` as required.
+- After understanding the initial examples, additional analysis and visualizations were implemented independently.
+
+---
+
 ## Author
 
 Na Ma  
