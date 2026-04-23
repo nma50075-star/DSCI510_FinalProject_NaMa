@@ -8,11 +8,11 @@ This project explores the relationship between Airbnb pricing patterns and touri
 
 ## Data Sources
 
-| Dataset          | Source                  | Description                                             |
-| ---------------- | ----------------------- | ------------------------------------------------------- |
-| Airbnb Open Data | Kaggle                  | Listing details including price, room type, and reviews |
-| Inside Airbnb LA | InsideAirbnb            | Detailed Los Angeles Airbnb listing data                |
-| Tourism Data     | Kaggle / public dataset | Monthly international visitor arrivals                  |
+| Dataset                               | Source                                         | Description                                                                |
+| ------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------------- |
+| Airbnb Open Data                      | Kaggle                                         | Listing details including price, room type, and reviews                    |
+| Inside Airbnb LA                      | InsideAirbnb                                   | Detailed Los Angeles Airbnb listing data                                   |
+| International Visitor Arrivals (I-94) | U.S. National Travel and Tourism Office (NTTO) | Monthly international visitor arrivals to the United States (2000–present) |
 
 ---
 
