@@ -8,11 +8,11 @@ This project explores the relationship between Airbnb pricing patterns and touri
 
 ## Data Sources
 
-| Dataset                               | Source                                         | Description                                                                |
-| ------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------------- |
-| Airbnb Open Data                      | Kaggle                                         | Listing details including price, room type, and reviews                    |
-| Inside Airbnb LA                      | InsideAirbnb                                   | Detailed Los Angeles Airbnb listing data                                   |
-| International Visitor Arrivals (I-94) | U.S. National Travel and Tourism Office (NTTO) | Monthly international visitor arrivals to the United States (2000–present) |
+| Dataset | Source | Description |
+|--------|--------|------------|
+| Airbnb Open Data | Kaggle | Listing details including price, room type, and reviews |
+| Inside Airbnb Los Angeles Listings | InsideAirbnb | Detailed Los Angeles Airbnb listing data |
+| I-94 Monthly International Visitor Arrivals, 2000–Present | U.S. NTTO | Monthly international visitor arrivals to the United States |
 
 ---
 
@@ -49,11 +49,11 @@ pip install -r requirements.txt
 
 ### Step 2: Prepare data
 
-Create a `data/` folder in the project root and place the following files:
+Create a `data/` folder and place:
 
-* Airbnb Kaggle dataset → `data/airbnb_kaggle.csv`
-* Inside Airbnb LA dataset → `data/insideairbnb_la.csv`
-* Tourism dataset → `data/tourism.csv`
+- Airbnb dataset → `data/airbnb_kaggle.csv`
+- Inside Airbnb dataset → `data/insideairbnb_la.csv`
+- Tourism dataset (I-94 NTTO) → `data/tourism.csv`
 
 Note: Data files are not included in this repository as required.
 
