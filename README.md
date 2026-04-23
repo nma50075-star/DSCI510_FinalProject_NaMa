@@ -14,6 +14,14 @@ This project explores the relationship between Airbnb pricing patterns and touri
 | Inside Airbnb Los Angeles Listings | InsideAirbnb | Detailed Los Angeles Airbnb listing data |
 | I-94 Monthly International Visitor Arrivals, 2000–Present | U.S. NTTO | Monthly international visitor arrivals to the United States |
 
+### Data Links
+
+* Airbnb Open Data: https://www.kaggle.com/datasets/arianazmoudeh/airbnbopendata/data
+* Inside Airbnb (Los Angeles): https://insideairbnb.com/get-the-data/
+* Tourism Data (I-94 NTTO): https://www.trade.gov/i-94-arrivals-program?anchor=content-node-t14-field-lp-region-2-1
+
+Note: Data files are not included in this repository as required.
+
 ---
 
 ## Analysis
