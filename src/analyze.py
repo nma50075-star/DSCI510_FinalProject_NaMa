@@ -14,6 +14,7 @@ def make_results_folder():
     if not os.path.exists(RESULTS_FOLDER):
         os.makedirs(RESULTS_FOLDER)
 
+# AI generated:
 def plot_price_histogram(df):
     make_results_folder()
     plt.figure()
@@ -25,6 +26,7 @@ def plot_price_histogram(df):
     plt.savefig(RESULTS_FOLDER + "price_histogram.png")
     plt.close()
 
+# AI generated:
 def plot_room_type_price(df):
     make_results_folder()
     avg_price = df.groupby(ROOM_TYPE_COL)[PRICE_COL].mean()
@@ -38,6 +40,7 @@ def plot_room_type_price(df):
     plt.savefig(RESULTS_FOLDER + "room_type_price.png")
     plt.close()
 
+# AI generated:
 def plot_minimum_nights_price(df):
     make_results_folder()
     plt.figure()
