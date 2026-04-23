@@ -7,6 +7,7 @@ def load_airbnb_kaggle():
     df = pd.read_csv(AIRBNB_KAGGLE_FILE, low_memory=False)
     return df
 
+# AI generated:
 def load_insideairbnb_la():
     df = pd.read_csv(INSIDEAIRBNB_LA_FILE, encoding="latin1", low_memory=False)
     return df
