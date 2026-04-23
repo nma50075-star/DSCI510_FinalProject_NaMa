@@ -29,6 +29,7 @@ def clean_numeric_column(df, column_name):
     df[column_name] = pd.to_numeric(df[column_name], errors="coerce")
     return df
 
+# AI generated:
 def clean_airbnb_kaggle(df):
     df = df.copy()
     df = standardize_columns(df)
@@ -43,6 +44,7 @@ def clean_airbnb_kaggle(df):
 
     return df
 
+# AI generated:
 def clean_insideairbnb(df):
     df = df.copy()
     df = standardize_columns(df)
