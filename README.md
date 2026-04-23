@@ -1,4 +1,4 @@
-# DSCI510 Final Project – Airbnb Pricing & Tourism Analysis
+# DSCI510 Final Project – Airbnb Pricing Analysis and Tourism Trends
 
 ## Introduction
 
