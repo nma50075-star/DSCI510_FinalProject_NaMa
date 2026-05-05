@@ -37,6 +37,12 @@ The project includes the following analyses:
 * Comparison of tourism arrivals between Asia and Central America
 * This project focuses on exploratory data analysis rather than predictive modeling
 
+## Summary of Results
+
+- Room type is a key factor influencing Airbnb prices, with clear differences across listing types
+- Review count and minimum nights do not show a strong relationship with price
+- Tourism trends provide useful background context for overall market demand, but are not directly linked to listing-level pricing
+
 ### Limitations
 
 - Prices in this analysis are based on total listing price and are not normalized by property size or number of guests
