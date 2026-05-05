@@ -36,6 +36,12 @@ The project includes the following analyses:
 * Tourism trend over time
 * Comparison of tourism arrivals between Asia and Central America
 
+### Limitations
+
+- Prices in this analysis are based on total listing price and are not normalized by property size or number of guests.
+- Larger properties may appear more expensive, even if the price per person is lower.
+- Future work could improve this analysis by standardizing price per guest or per property size.
+
 ---
 
 ## Summary of the Results
