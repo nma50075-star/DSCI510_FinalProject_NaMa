@@ -39,7 +39,7 @@ The project includes the following analyses:
 
 ## Summary of Results
 
-- Room type is a key factor influencing Airbnb prices, with clear differences across listing types
+- Room type is a key factor influencing Airbnb prices, with entire homes generally priced higher than private or shared rooms
 - Review count and minimum nights do not show a strong relationship with price
 - Tourism trends provide useful background context for overall market demand, but are not directly linked to listing-level pricing
 
