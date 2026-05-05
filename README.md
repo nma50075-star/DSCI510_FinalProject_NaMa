@@ -35,6 +35,7 @@ The project includes the following analyses:
 * Reviews distribution across room types
 * Tourism trend over time
 * Comparison of tourism arrivals between Asia and Central America
+* This project focuses on exploratory data analysis rather than predictive modeling
 
 ### Limitations
 
